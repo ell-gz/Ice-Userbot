@@ -29,7 +29,7 @@ def __list_all_modules():
                 any(mod == module_name for module_name in all_modules)
                 for mod in to_load
             ):
-                LOGS.error("Nama Modules yang anda masukan salah.")
+                LOGS.error("Nama Modules yang lu masukin salah.")
                 sys.exit(1)
         else:
             to_load = all_modules
