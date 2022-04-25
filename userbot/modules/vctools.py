@@ -49,7 +49,7 @@ async def start_voice(c):
         return
     try:
         await c.client(startvc(c.chat_id))
-        await edit_or_reply(c, "`Voice Chat Started...`")
+        await edit_or_reply(c, "`Vcg Dimulai...`")
     except Exception as ex:
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
@@ -66,14 +66,14 @@ async def stop_voice(c):
         return
     try:
         await c.client(stopvc(await get_call(c)))
-        await edit_or_reply(c, "`Voice Chat Stopped...`")
+        await edit_or_reply(c, "`Vcg Dihentikan...`")
     except Exception as ex:
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
 
 @ice_cmd(pattern="vcinvite")
 async def _(c):
-    xxnx = await edit_or_reply(c, "`Inviting Members to Voice Chat...`")
+    xxnx = await edit_or_reply(c, "`Mengundang orang ke Vcg...`")
     users = []
     z = 0
     async for x in c.client.iter_participants(c.chat_id):
@@ -86,7 +86,7 @@ async def _(c):
             z += 6
         except BaseException:
             pass
-    await xxnx.edit(f"`{z}` **Orang Berhasil diundang ke VCG**")
+    await xxnx.edit(f"`{z}` **Manusia Berhasil diundang ke VCG**")
 
 
 @ice_cmd(pattern="vctitle(?: |$)(.*)")
@@ -112,7 +112,7 @@ async def change_title(e):
 @ice_cmd(pattern="joinvc(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.joinvcs(?: |$)(.*)")
 async def _(event):
-    Ice = await edit_or_reply(event, "`Processing...`")
+    Ice = await edit_or_reply(event, "`Memproses...`")
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
@@ -134,13 +134,13 @@ async def _(event):
                 stream_type=StreamType().local_stream,
             )
             await Ice.edit(
-                f"❏ **Berhasil Join Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
+                f"❏ **Berhasil Join Ke OS**\n└ **Chat ID:** `{chat_id}`"
             )
         except AlreadyJoinedError:
             await call_py.leave_group_call(chat_id)
             await edit_delete(
                 Ice,
-                "**ERROR:** `Karena akun sedang berada di obrolan suara`\n\n• Silahkan coba `.joinvc` lagi",
+                "**ERROR:** `Karena akun lagi di obrolan suara`\n\n• Silahkan coba `.joinvc` lagi",
                 45,
             )
         except Exception as e:
@@ -150,7 +150,7 @@ async def _(event):
 @ice_cmd(pattern="leavevc(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.leavevcs(?: |$)(.*)")
 async def vc_end(event):
-    Ice = await edit_or_reply(event, "`Processing...`")
+    Ice = await edit_or_reply(event, "`Memproses...`")
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
@@ -164,7 +164,7 @@ async def vc_end(event):
             await call_py.leave_group_call(chat_id)
             await edit_delete(
                 Ice,
-                f"❏ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`",
+                f"❏ **Berhasil Turun dari OS**\n└ **Chat ID:** `{chat_id}`",
             )
         except Exception as e:
             await Ice.edit(f"**INFO:** `{e}`")
@@ -173,17 +173,17 @@ CMD_HELP.update(
     {
         "vcg": f"**Plugin : **`vcg`\
         \n\n  •  **Syntax :** `{cmd}startvc`\
-        \n  •  **Function : **Untuk Memulai voice chat group\
+        \n  •  **Function : **Buat Mulai voice chat group\
         \n\n  •  **Syntax :** `{cmd}stopvc`\
-        \n  •  **Function : **Untuk Memberhentikan voice chat group\
+        \n  •  **Function : **Buat Berhentiin voice chat group\
         \n\n  •  **Syntax :** `{cmd}joinvc` atau `{cmd}joinvc` <chatid/username gc>\
-        \n  •  **Function : **Untuk Bergabung ke voice chat group\
+        \n  •  **Function : **Buat Gabung ke voice chat group\
         \n\n  •  **Syntax :** `{cmd}leavevc` atau `{cmd}leavevc` <chatid/username gc>\
-        \n  •  **Function : **Untuk Turun dari voice chat group\
+        \n  •  **Function : **Buat Turun dari voice chat group\
         \n\n  •  **Syntax :** `{cmd}vctitle` <title vcg>\
-        \n  •  **Function : **Untuk Mengubah title/judul voice chat group\
+        \n  •  **Function : **Buat Mengubah title/judul voice chat group\
         \n\n  •  **Syntax :** `{cmd}vcinvite`\
-        \n  •  **Function : **Mengundang Member group ke voice chat group\
+        \n  •  **Function : **Ngundang Member group ke voice chat group\
     "
     }
 )
