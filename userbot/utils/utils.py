@@ -135,7 +135,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"❄️ Owner ~ {who.first_name} ❄️\n\n❄️ Powered By ~ @musikkuchannel\n\n❄️ Powered By ~ @musikkugroup"
+                bf, f"🦍 Owner ~ {who.first_name} 🦍\n\n🦍 Powered By ~ @grzmusik\n\n🦍 Powered By ~ @tegediskusirasa"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -190,7 +190,7 @@ async def autobot():
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"❄️ Owner ~ {who.first_name} ❄️\n\n❄️ Powered By ~ @musikkuchannel\n\n❄️ Powered By ~ @musikkugroup"
+            bf, f"🦍 Owner ~ {who.first_name} 🦍\n\n🦍 Powered By ~ @grzmusik\n\n🦍 Powered By ~ @tegediskusirasa"
         )
         await bot.send_message(
             BOTLOG_CHATID,
@@ -237,8 +237,8 @@ async def autopilot():
     try:
         r = await bot(
             CreateChannelRequest(
-                title="𝙄𝘾𝙀-𝙐𝙎𝙀𝙍𝘽𝙊𝙏  𝙇𝙊𝙂𝙎",
-                about="Group log ɪᴄᴇ-ᴜsᴇʀʙᴏᴛ.\n\nJoin @musikkuchannel\n@musikkugroup",
+                title="𝙐𝙎𝙀𝙍𝘽𝙊𝙏  𝙇𝙊𝙂𝙎",
+                about="Group log ᴜsᴇʀʙᴏᴛ.\n\nJoin @grzmusik\n@tegediskusirasa",
                 megagroup=True,
             ),
         )
