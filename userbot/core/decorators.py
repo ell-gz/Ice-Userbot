@@ -23,7 +23,7 @@ def check_owner(func):
         else:
             HELP_TEXT = (
                 gvarstatus("HELP_TEXT")
-                or f"Hanya {owner} yang dapat Mengakses Ini!!\nSilahkan Buat UserBot Anda sendiri."
+                or f"Cuma {owner} yang dapat Mengakses Ini!!\nSilahkan Buat UserBot Anda sendiri."
             )
             await c_q.answer(
                 HELP_TEXT,
