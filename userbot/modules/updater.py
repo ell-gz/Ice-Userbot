@@ -24,7 +24,7 @@ async def gen_chlog(repo, diff):
 
 async def print_changelogs(xx, ac_br, changelog):
     changelog_str = (
-        f"**✥ Tersedia Pembaruan Untuk [{ac_br}] :\n\n✥ Pembaruan:**\n`{changelog}`"
+        f"**✥ Ada Pembaruan Untuk [{ac_br}] :\n\n✥ Pembaruan:**\n`{changelog}`"
     )
     if len(changelog_str) > 4096:
         await edit_or_reply(xx, "**Changelog terlalu besar, dikirim sebagai file.**")
@@ -60,7 +60,7 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
             await edit_or_reply(
                 xx,
                 f"{txt}\n"
-                "**Kredensial Heroku tidak valid untuk deploy Ice-Userbot dyno.**",
+                "**Kredensial Heroku tidak valid untuk deploy Gz-Ubot dyno.**",
             )
             return repo.__del__()
         try:
@@ -72,9 +72,9 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
             pass
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
-        repo.config_writer().set_value("user", "name", "jokokendi").release()
+        repo.config_writer().set_value("user", "name", "ell-gz").release()
         repo.config_writer().set_value(
-            "user", "email", "ajual7832@gmail.com"
+            "user", "email", "melohnation@gmail.com"
         ).release()
         repo.git.commit("--amend", "--no-edit")
         heroku_git_url = heroku_app.git_url.replace(
@@ -88,7 +88,7 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
         try:
             remote.push(refspec="HEAD:refs/heads/master", force=True)
         except Exception as error:
-            await edit_or_reply(xx, f"{txt}\n**Terjadi Kesalahan Di Log:**\n`{error}`")
+            await edit_or_reply(xx, f"{txt}\n**Ada Kesalahan Di Log:**\n`{error}`")
             return repo.__del__()
         build = heroku_app.builds(order_by="created_at", sort="desc")[0]
         if build.status == "failed":
@@ -96,7 +96,7 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
                 xx, "**Build Gagal!** Dibatalkan karena ada beberapa error.`"
             )
         await edit_or_reply(
-            xx, "`❄️ Ice-Userbot Berhasil Di upgrade! Userbot bisa di gunakan kembali.`"
+            xx, "`🦍 Gz-Ubot Berhasil Di upgrade! Userbot bisa di Pake lagi.`"
         )
 
     else:
@@ -111,7 +111,7 @@ async def update(xx, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await edit_or_reply(
-        xx, "`❄️ Ice-Userbot Berhasil Diupdate! Userbot bisa di Gunakan Lagi.`"
+        xx, "`🦍 Gz-Ubot Berhasil Diupdate! Userbot bisa di Pake Lagi.`"
     )
 
     try:
@@ -131,7 +131,7 @@ async def update(xx, repo, ups_rem, ac_br):
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cupdate( now| deploy|$)")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
-    xx = await edit_or_reply(event, "`Mengecek Pembaruan, Tunggu Sebentar...`")
+    xx = await edit_or_reply(event, "`Mengecek Pembaruan, Tunggu Bentar...`")
     conf = event.pattern_match.group(1).strip()
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -172,19 +172,19 @@ async def upstream(event):
 
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     if conf == "deploy":
-        await xx.edit("`[HEROKU]: Update Deploy Ice-Userbot Sedang Dalam Proses...`")
+        await xx.edit("`[HEROKU]: Update Deploy Gz-Ubot Lagi Proses...`")
         await deploy(xx, repo, ups_rem, ac_br, txt)
         return
 
     if changelog == "" and not force_update:
-        await edit_delete(xx, "**❄️ Ice-Userbot Sudah Versi Terbaru**")
+        await edit_delete(xx, "**🦍 Gz-Ubot Sudah Versi Terbaru**")
         return repo.__del__()
 
     if conf == "" and not force_update:
         await print_changelogs(xx, ac_br, changelog)
         await xx.delete()
         return await event.respond(
-            f"**Ketik** `{cmd}update now` **untuk Mengupdate Userbot.**"
+            f"**Ketik** `{cmd}update now` **buat Update Userbot.**"
         )
 
     if force_update:
@@ -210,9 +210,9 @@ CMD_HELP.update(
     {
         "update": f"**Plugin : **`update`\
         \n\n  •  **Syntax :** `{cmd}update`\
-        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru Ice-Userbot.\
+        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru Gz-Ubot.\
         \n\n  •  **Syntax :** `{cmd}update deploy`\
-        \n  •  **Function : **Untuk MengUpdate Fitur Terbaru Dari Ice-Userbot.\
+        \n  •  **Function : **Untuk MengUpdate Fitur Terbaru Dari Gz-Ubot.\
     "
     }
 )
