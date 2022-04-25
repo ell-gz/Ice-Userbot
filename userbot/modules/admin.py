@@ -145,12 +145,12 @@ async def promote(event):
         rank = "admin"
     if not user:
         return
-    eventice = await edit_or_reply(event, "`Promoting...`")
+    eventice = await edit_or_reply(event, "`Mempromosikan...`")
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
         return await eventice.edit(NO_PERM)
-    await edit_delete(eventice, "`Promoted Successfully!`", 30)
+    await edit_delete(eventice, "`Sukses Mempromosikan!`", 30)
 
 
 @ice_cmd(pattern="demote(?:\s|$)([\s\S]*)")
@@ -160,7 +160,7 @@ async def demote(event):
     user, _ = await get_user_from_event(event)
     if not user:
         return
-    eventice = await edit_or_reply(event, "`Demoting...`")
+    eventice = await edit_or_reply(event, "`Menurunkan...`")
     newrights = ChatAdminRights(
         add_admins=None,
         invite_users=None,
@@ -175,7 +175,7 @@ async def demote(event):
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
     except BadRequestError:
         return await eventice.edit(NO_PERM)
-    await edit_delete(eventice, "`Demoted Successfully!`", 30)
+    await edit_delete(eventice, "`Unadmin Sukses!`", 30)
 
 
 @ice_cmd(pattern="ban(?:\s|$)([\s\S]*)")
@@ -190,7 +190,7 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    await edit_or_reply(bon, "`Processing Banned...`")
+    await edit_or_reply(bon, "`Proses Banned...`")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
@@ -199,7 +199,7 @@ async def ban(bon):
         await edit_or_reply(
             bon,
             f"\\**#Banned_User**//"
-            f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
+            f"\n\n🦍 Usᴇʀʙᴏᴛ 🦍"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{str(user.id)}`\n"
             f"**Reason:** `{reason}`",
@@ -208,7 +208,7 @@ async def ban(bon):
         await edit_or_reply(
             bon,
             f"\\**#Banned_User**//"
-            f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
+            f"\n\n🦍 Usᴇʀʙᴏᴛ 🦍"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{user.id}`\n"
             f"**Action:** `Banned User by {owner}`",
@@ -223,7 +223,7 @@ async def nothanos(unbon):
     creator = chat.creator
     if not admin and not creator:
         return await edit_delete(unbon, NO_ADMIN)
-    await edit_or_reply(unbon, "`Processing...`")
+    await edit_or_reply(unbon, "`Memproses...`")
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
@@ -232,7 +232,7 @@ async def nothanos(unbon):
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
         await edit_delete(unbon, "`Unban Berhasil Dilakukan!`")
     except UserIdInvalidError:
-        await edit_delete(unbon, "`Sepertinya Terjadi ERROR!`")
+        await edit_delete(unbon, "`Kayaknya Terjadi ERROR!`")
 
 
 @ice_cmd(pattern="mute(?: |$)(.*)")
@@ -256,24 +256,24 @@ async def spider(spdr):
             spdr, "**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**"
         )
     if user.id in DEVS:
-        return await edit_or_reply(spdr, "**Gagal Mute, Dia Adalah Pembuat Saya 🤪**")
+        return await edit_or_reply(spdr, "**Gagal Mute, Dia Adalah Pembuat Saya 🗿**")
     await edit_or_reply(
         spdr,
         r"\\**#Muted_User**//"
-        f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
+        f"\n\n🦍 Usᴇʀʙᴏᴛ 🦍"
         f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**User ID:** `{user.id}`\n"
         f"**Action:** `Mute by {owner}`",
     )
     if mute(spdr.chat_id, user.id) is False:
-        return await edit_delete(spdr, "**ERROR:** `Pengguna Sudah Dibisukan.`")
+        return await edit_delete(spdr, "**ERROR:** `Pengguna Udah Dibisukan.`")
     try:
         await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
         if reason:
             await edit_or_reply(
                 spdr,
                 r"\\**#DMute_User**//"
-                f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
+                f"\n\n🦍 Usᴇʀʙᴏᴛ 🦍"
                 f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**User ID:** `{user.id}`\n"
                 f"**Reason:** `{reason}`",
@@ -282,7 +282,7 @@ async def spider(spdr):
             await edit_or_reply(
                 spdr,
                 r"\\**#DMute_User**//"
-                f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
+                f"\n\n🦍 Usᴇʀʙᴏᴛ 🦍"
                 f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**User ID:** `{user.id}`\n"
                 f"**Action:** `DMute by {owner}`",
@@ -303,7 +303,7 @@ async def unmoot(unmot):
         from userbot.modules.sql_helper.spam_mute_sql import unmute
     except AttributeError:
         return await unmot.edit(NO_SQL)
-    await edit_or_reply(unmot, "`Processing...`")
+    await edit_or_reply(unmot, "`Memproses...`")
     user = await get_user_from_event(unmot)
     user = user[0]
     if not user:
@@ -403,7 +403,7 @@ async def gspider(gspdr):
         await edit_or_reply(
             gspdr,
             r"\\**#GMuted_User**//"
-            f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
+            f"\n\n🦍 Usᴇʀʙᴏᴛ 🦍"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{user.id}`\n"
             f"**Reason:** `{reason}`",
@@ -412,7 +412,7 @@ async def gspider(gspdr):
         await edit_or_reply(
             gspdr,
             r"\\**#GMuted_User**//"
-            f"\n\n❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️"
+            f"\n\n🦍 Usᴇʀʙᴏᴛ 🦍"
             f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
             f"**User ID:** `{user.id}`\n"
             f"**Action:** `Global Muted by {owner}`",
@@ -423,16 +423,16 @@ async def gspider(gspdr):
 async def rm_deletedacc(show):
     con = show.pattern_match.group(1).lower()
     del_u = 0
-    del_status = "**Grup Bersih, Tidak Menemukan Akun Terhapus.**"
+    del_status = "**Grup Bersih, Tidak Menemukan Akun Depresi.**"
     if con != "clean":
-        await show.edit("`Mencari Akun Depresi...`")
+        await show.edit("`Mencari Akun Sampah...`")
         async for user in show.client.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
             del_status = (
-                f"**Menemukan** `{del_u}` **Akun Depresi/Terhapus/Zombie Dalam Grup Ini,"
+                f"**Menemukan** `{del_u}` **Akun Depresi/Sampah/Zombie Dalam Grup Ini,"
                 f"\nBersihkan Itu Menggunakan Perintah** `{cmd}zombies clean`"
             )
         return await show.edit(del_status)
@@ -440,8 +440,8 @@ async def rm_deletedacc(show):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        return await show.edit("**Maaf Kamu Bukan Admin!**")
-    await show.edit("`Menghapus Akun Depresi...`")
+        return await show.edit("**Maaf Lu Bukan Admin!**")
+    await show.edit("`Menghapus Akun Sampah...`")
     del_u = 0
     del_a = 0
     async for user in show.client.iter_participants(show.chat_id):
@@ -458,10 +458,10 @@ async def rm_deletedacc(show):
             await show.client(EditBannedRequest(show.chat_id, user.id, UNBAN_RIGHTS))
             del_u += 1
     if del_u > 0:
-        del_status = f"**Membersihkan** `{del_u}` **Akun Terhapus**"
+        del_status = f"**Membersihkan** `{del_u}` **Akun Sampah**"
     if del_a > 0:
         del_status = (
-            f"**Membersihkan** `{del_u}` **Akun Terhapus** "
+            f"**Membersihkan** `{del_u}` **Akun Sampah** "
             f"\n`{del_a}` **Akun Admin Yang Terhapus Tidak Dihapus.**"
         )
     await show.edit(del_status)
@@ -471,7 +471,7 @@ async def rm_deletedacc(show):
         await show.client.send_message(
             BOTLOG_CHATID,
             "**#ZOMBIES**\n"
-            f"**Membersihkan** `{del_u}` **Akun Terhapus!**"
+            f"**Membersihkan** `{del_u}` **Akun Sampah!**"
             f"\n**GRUP:** {show.chat.title}(`{show.chat_id}`)",
         )
 
@@ -480,7 +480,7 @@ async def rm_deletedacc(show):
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title or "Grup Ini"
-    mentions = f"<b>👑 Daftar Admin Grup {title}:</b> \n"
+    mentions = f"<b>😎 Daftar Admin Grup {title}:</b> \n"
     try:
         async for user in show.client.iter_participants(
             show.chat_id, filter=ChannelParticipantsAdmins
@@ -509,7 +509,7 @@ async def pin(event):
         return await edit_delete(event, NO_PERM, 5)
     except Exception as e:
         return await edit_delete(event, f"`{e}`", 5)
-    await edit_delete(event, "`Pinned Successfully!`")
+    await edit_delete(event, "`Sukses Sematin!`")
 
 
 @ice_cmd(pattern="unpin( all|$)")
@@ -538,7 +538,7 @@ async def pin(event):
         return await edit_delete(event, NO_PERM, 5)
     except Exception as e:
         return await edit_delete(event, f"`{e}`", 5)
-    await edit_delete(event, "`Unpinned Successfully!`")
+    await edit_delete(event, "`Melepas Pesan Sematan Sukses!`")
 
 
 @ice_cmd(pattern="kick(?: |$)(.*)")
@@ -552,7 +552,7 @@ async def kick(usr):
     user, reason = await get_user_from_event(usr)
     if not user:
         return await edit_delete(usr, "**Tidak Dapat Menemukan Pengguna.**")
-    xxnx = await edit_or_reply(usr, "`Processing...`")
+    xxnx = await edit_or_reply(usr, "`Memproses...`")
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
@@ -560,11 +560,11 @@ async def kick(usr):
         return await edit_delete(usr, NO_PERM + f"\n{e}")
     if reason:
         await xxnx.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) **Telah Dikick Dari Grup**\n**Alasan:** `{reason}`"
+            f"[{user.first_name}](tg://user?id={user.id}) **Dikick Dari Grup**\n**Alasan:** `{reason}`"
         )
     else:
         await xxnx.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) **Telah Dikick Dari Grup**",
+            f"[{user.first_name}](tg://user?id={user.id}) **Dikick Dari Grup**",
         )
 
 
