@@ -32,7 +32,7 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        return await edit_delete(event, "**Berikan Sebuah Pesan Atau Reply**")
+        return await edit_delete(event, "**Kasih Gua Pesan Atau Reply**")
     kk = await edit_or_reply(event, "`Globally Broadcasting Message...`")
     er = 0
     done = 0
@@ -49,7 +49,7 @@ async def gcast(event):
                 except BaseException:
                     er += 1
     await kk.edit(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**"
+        f"**Berhasil Ngirim Pesan Ke** `{done}` **Grup, Gagal Ngirim Pesan Ke** `{er}` **Grup**"
     )
 
 
@@ -61,7 +61,7 @@ async def gucast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        return await edit_delete(event, "**Berikan Sebuah Pesan atau Reply**")
+        return await edit_delete(event, "**Kasih Gua Pesan atau Reply**")
     kk = await edit_or_reply(event, "`Globally Broadcasting Message...`")
     er = 0
     done = 0
@@ -78,7 +78,7 @@ async def gucast(event):
                 except BaseException:
                     er += 1
     await kk.edit(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **Chat, Gagal Mengirim Pesan Ke** `{er}` **chat**"
+        f"**Berhasil Ngirim Pesan Ke** `{done}` **Chat, Gagal Ngirim Pesan Ke** `{er}` **chat**"
     )
 
 
@@ -96,7 +96,7 @@ CMD_HELP.update(
     {
         "gucast": f"**Plugin : **`gucast`\
         \n\n  •  **Syntax :** `{cmd}gucast` <text/reply media>\
-        \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Private Massage / PC yang masuk. (Bisa Mengirim Media/Sticker)\
+        \n  •  **Function : **Ngirim Gikes pesan ke Seluruh Private Message / PC yang masuk. (Bisa Mengirim Media/Sticker)\
     "
     }
 )
