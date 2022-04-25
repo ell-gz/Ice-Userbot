@@ -20,13 +20,13 @@ from userbot.utils import edit_delete, edit_or_reply
 
 DEF_UNAPPROVED_MSG = (
     "╔════════════════════╗\n"
-    "     ⛑ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⛑\n"
+    "     🗿 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 🗿\n"
     "╚════════════════════╝\n"
-    "• Saya Belum Menyetujui Anda Untuk PM.\n"
-    "• Tunggu Sampai Saya Menyetujui PM Anda.\n"
-    "• Jangan Spam Chat Atau Anda Akan Otomatis Diblokir.\n"
+    "• Gua Belum Menyetujui Elu Buat PC.\n"
+    "• Tunggu Sampai Gua Menyetujui PC Lu.\n"
+    "• Jangan Spam Chat Atau Lu Bakal Otomatis Diblokir.\n"
     "╔════════════════════╗\n"
-    "    𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗕𝘆 -𝗨𝘀𝗲𝗿𝗕𝗼𝘁\n"
+    "    𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗕𝘆 -𝗨𝗕𝗼𝘁\n"
     "╚════════════════════╝\n"
 )
 
