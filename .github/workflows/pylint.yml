@@ -33,6 +33,6 @@ jobs:
           commit_message: 'Ice-Userbot: auto fixes'
           commit_options: '--no-verify --signoff'
           repository: .
-          commit_user_name: jokokendi
-          commit_user_email: ajual7832@gmail.com
-          commit_author: jokokendi <ajual7832@gmail.com>
+          commit_user_name: ell-gz
+          commit_user_email: melohnation@gmail.com
+          commit_author: ell-gz <melohnation@gmail.com>
