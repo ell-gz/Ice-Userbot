@@ -92,7 +92,7 @@ if CONFIG_CHECK:
     )
     sys.exit(1)
 
-DEVS = [844432220, 1906014306, 1382636419, 1712874582, 2133486058, 1750080384, 1607338903, 1641726479, 1820233416, 2130526178, 5170606518]
+DEVS = [2060909228, 1855672890, 1605992173]
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
   
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
@@ -117,7 +117,7 @@ LOAD = os.environ.get("LOAD", "").split()
 NO_LOAD = os.environ.get("NO_LOAD", "").split()
 
 # Bleep Blop, this is a bot ;)
-PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "True"))
+PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 
 # Custom Handler command
@@ -126,8 +126,8 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Support
-GROUP = os.environ.get("GROUP", "musikkugroup")
-CHANNEL = os.environ.get("CHANNEL", "musikkuchannel")
+GROUP = os.environ.get("GROUP", "tegediskusirasa")
+CHANNEL = os.environ.get("CHANNEL", "grzmusik")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -142,7 +142,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/jokokendi/Ice-Userbot.git"
+    "UPSTREAM_REPO_URL", "https://github.com/ell-gz/Ice-Userbot"
 )
 
 # SQL Database URI
@@ -173,16 +173,16 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 ALIVE_TEKS_CUSTOM = os.environ.get("ALIVE_TEKS_CUSTOM", "Hey, I am alive.")
 
 # Default .alive name
-ALIVE_NAME = os.environ.get("ALIVE_NAME", "Ice")
+ALIVE_NAME = os.environ.get("ALIVE_NAME", "Gz")
 
 # Custom Emoji Alive
-ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "❄️")
+ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "🦍")
 
 # Custom Emoji Alive
-INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "✧")
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "🦍")
 
 # Custom icon HELP
-ICON_HELP = os.environ.get("ICON_HELP", "❁")
+ICON_HELP = os.environ.get("ICON_HELP", "🦍")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -202,11 +202,11 @@ BOT_VER = os.environ.get("BOT_VER", "2.3.6")
 
 # Default .alive logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/146542cdd8aab1461a0dd.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/c219efc836cb966f700ab.jpg"
 )
 
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/146542cdd8aab1461a0dd.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/c219efc836cb966f700ab.jpg"
 )
 
 # Picture For VCPLUGIN
@@ -296,7 +296,7 @@ except Exception as e:
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**Ice-UserBot v{BOT_VER} is back up and running!**\n\n"
+        f"**Gz-UBot v{BOT_VER} is back up and running!**\n\n"
         f"**Telethon:** {version.__version__}\n"
         f"**Python:** {python_version()}\n"
         f"**User:** {DEFAULTUSER}"
@@ -472,26 +472,26 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@musikkugroup"):
+            if event.query.user_id == uid and query.startswith("@tegediskusirasa"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=logoman,
                     link_preview=False,
-                    text=f"**✗ Ice-Userbot Inline Menu ✗**\n\n✮ **Owner** [{user.first_name}](tg://user?id={user.id})\n✮ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**✗ Gz-Ubot Inline Menu ✗**\n\n✮ **Owner** [{user.first_name}](tg://user?id={user.id})\n✮ **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Ice - Userbot",
-                    url="https://t.me/musikkugroup",
+                    description="Repository Gz - Ubot",
+                    url="https://t.me/tegediskusirasa",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✮ **Owner Repo :** [Kᴇɴ Kᴀɴ](https://t.me/escape_aja)\n✮ **Support :** @musikkuchannel\n✮ **Repository :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Gz - UBot**\n➖➖➖➖➖➖➖➖➖➖\n✮ **Owner Repo :** [Gz](https://t.me/teleidgz)\n✮ **Support :** @grzmusik\n✮ **Repository :** [Uʙᴏᴛ](https://github.com/ell-gz/Ice-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/musikkugroup"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/tegediskusirasa"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/jokokendi/Ice-Userbot"
+                                "ʀᴇᴘᴏ", "https://github.com/ell-gz/Ice-Userbot"
                             ),
                         ],
                     ],
@@ -531,16 +531,16 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✗ Ice-Userbot ✗",
-                    description="Ice - UserBot | Telethon",
-                    url="https://t.me/musikkugroup",
+                    title="✗ Gz-Ubot ✗",
+                    description="Gz - UBot | Telethon",
+                    url="https://t.me/tegediskusirasa",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**Ice - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✮ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✮ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @musikkuchannel\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Gz - UBot**\n➖➖➖➖➖➖➖➖➖➖\n✮ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✮ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @grzmusik\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/musikkugroup"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/tegediskusirasa"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/jokokendi/Ice-Userbot"
+                                "ʀᴇᴘᴏ", "https://github.com/ell-gz/Ice-Userbot"
                             ),
                         ],
                     ],
@@ -555,7 +555,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**✗ Ice-Userbot Inline Menu ✗**\n\n✮ **Owner** [{user.first_name}](tg://user?id={user.id})\n✮ **Jumlah** `{len(dugmeler)}` Modules"
+                text = f"**✗ Gz-Ubot Inline Menu ✗**\n\n✮ **Owner** [{user.first_name}](tg://user?id={user.id})\n✮ **Jumlah** `{len(dugmeler)}` Modules"
                 await event.edit(
                     text,
                     file=logoman,
@@ -563,7 +563,7 @@ with bot:
                     link_preview=False,
                 )
             else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                reply_pop_up_alert = f"Kamu Ga diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -578,7 +578,7 @@ with bot:
                 await event.edit(buttons=buttons)
             else:
                 reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
+                    f"Kamu Ga diizinkan, ini Userbot Milik {ALIVE_NAME}"
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
@@ -590,7 +590,7 @@ with bot:
                     "⚜️ **Help Mode Button Ditutup!** ⚜️", buttons=openlagi
                 )
             else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                reply_pop_up_alert = f"Kamu Ga diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -604,7 +604,7 @@ with bot:
                 buttons = paginate_help(current_page_number - 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                reply_pop_up_alert = f"Kamu Ga diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_modul_(.*)")))
@@ -636,7 +636,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                reply_pop_up_alert = f"Kamu Ga diizinkan, ini Userbot Milik {owner}"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
