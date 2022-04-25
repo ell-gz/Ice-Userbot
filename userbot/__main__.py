@@ -30,12 +30,12 @@ try:
     ).json()
     if user.id in blacklistman:
         LOGS.warning(
-            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTNYA GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @mrismanaziz\nClone: @escape_aja"
+            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTNYA GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @mrismanaziz\nClone: @teleidgz"
         )
         sys.exit(1)
-    if 1607338903 not in DEVS:
+    if 1855672890 not in DEVS:
         LOGS.warning(
-            f"EOL\nIce-UserBot v{BOT_VER}, Copyright © 2021-2022 Kᴇɴ Kᴀɴ• <https://github.com/jokokendi>"
+            f"EOL\nGz-UBot v{BOT_VER}, Copyright © 2021-2022 Gz• <https://github.com/ell-gz>"
         )
         sys.exit(1)
 except Exception as e:
@@ -46,10 +46,10 @@ for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 LOGS.info(
-    f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/musikkugroup"
+    f"Jika {user.first_name} Butuh Bantuan, Join Terus Tanya di Grup https://t.me/tegediskusirasa"
 )
 
-LOGS.info(f"Ice-Userbot ⚙️ V{BOT_VER} [❄️ BERHASIL DIAKTIFKAN! ❄️]")
+LOGS.info(f"Gz-Ubot 😎 V{BOT_VER} [🦍 BERHASIL DIAKTIFKAN! ❄️]")
 
 if not BOTLOG_CHATID:
     LOGS.info(
@@ -62,7 +62,7 @@ async def ice_userbot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"❄️ **Ice-Userbot Berhasil Di Aktifkan**\n━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}alive` **Untuk Mengecek Bot**\n━━",
+                f"🦍 **Gz-Ubot Berhasil Di Aktifkan**\n━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}alive` **Untuk Mengecek Bot**\n━━",
             )
     except Exception as e:
         LOGS.info(str(e))
