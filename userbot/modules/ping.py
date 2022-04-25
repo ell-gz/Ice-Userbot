@@ -19,12 +19,12 @@ from userbot.events import register
 from userbot.utils import edit_or_reply, humanbytes, ice_cmd
 
 absen = [
-    "**Hadir bang Ken** 😁",
-    "**Hadir kak Ken** 😉",
-    "**Hadir dong Mas Ken** 😁",
-    "**Hadir Ken ganteng** 🥵",
-    "**Hadir bro Ken** 😎",
-    "**Hadir kak Ken maap telat** 🥺",
+    "**Hadir bang Gz** 😁",
+    "**Hadir kak Gz** 😉",
+    "**Hadir dong Mas Gz** 😁",
+    "**Hadir Gz ganteng** 🥵",
+    "**Hadir bro Gz** 😎",
+    "**Hadir kak Gz maap telat** 🥺",
 ]
 
 
@@ -66,7 +66,7 @@ async def _(ping):
     duration = (end - start).microseconds / 1000
     user = await bot.get_me()
     await xx.edit(
-        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
+        f"🦍 Usᴇʀʙᴏᴛ 🦍\n"
         f"**PONG!!🏓**\n"
         f"✮ **Pinger** - `%sms`\n"
         f"✮ **Uptime -** `{uptime}` \n"
@@ -83,8 +83,8 @@ async def _(ping):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await xping.edit(
-        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
-        f"**PONG!! 🍭**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration)
+        f"🦍 Usᴇʀʙᴏᴛ 🦍\n"
+        f"**PONG!! 🥵**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration)
     )
 
 
@@ -102,7 +102,7 @@ async def _(ping):
     duration = (end - start).microseconds / 1000
     user = await bot.get_me()
     await lping.edit(
-        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
+        f"🦍 Usᴇʀʙᴏᴛ 🦍\n"
         f"❃ **Pɪɴɢ !!** "
         f"`%sms` \n"
         f"❃ **Uᴘᴛɪᴍᴇ -** "
@@ -123,7 +123,7 @@ async def _(pong):
     duration = (end - start).microseconds / 1000
     user = await bot.get_me()
     await kopong.edit(
-        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
+        f"🦍 Usᴇʀʙᴏᴛ 🦍\n"
         f"**✲ 𝙺𝙾𝙽𝚃𝙾𝙻 𝙼𝙴𝙻𝙴𝙳𝚄𝙶** "
         f"\n ⫸ ᴷᵒⁿᵗᵒˡ `%sms` \n"
         f"**✲ 𝙱𝙸𝙹𝙸 𝙿𝙴𝙻𝙴𝚁** "
@@ -160,7 +160,7 @@ async def _(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await kping.edit(
-        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
+        f"🦍 Usᴇʀʙᴏᴛ 🦍\n"
         f"**NGENTOT!! 🐨**\n**KAMPANG** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration)
     )
 
@@ -176,7 +176,7 @@ async def _(speed):
     test.results.share()
     result = test.results.dict()
     msg = (
-        f"❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ ❄️\n"
+        f"🦍 Usᴇʀʙᴏᴛ 🦍\n"
         f"**Started at {result['timestamp']}**\n\n"
         "**Client**\n"
         f"**ISP :** `{result['client']['isp']}`\n"
@@ -234,7 +234,7 @@ CMD_HELP.update(
     {
         "speedtest": f"**Plugin : **`speedtest`\
         \n\n  •  **Syntax :** `{cmd}speedtest`\
-        \n  •  **Function : **Untuk Mengetes kecepatan server userbot.\
+        \n  •  **Function : **Untuk Mengetes kecepatan server ubot.\
     "
     }
 )
