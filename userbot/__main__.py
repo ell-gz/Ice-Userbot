@@ -49,7 +49,7 @@ LOGS.info(
     f"Jika {user.first_name} Butuh Bantuan, Join Terus Tanya di Grup https://t.me/tegediskusirasa"
 )
 
-LOGS.info(f"Gz-Ubot 😎 V{BOT_VER} [🦍 BERHASIL DIAKTIFKAN! ❄️]")
+LOGS.info(f"Gz-Ubot 😎 V{BOT_VER} [🦍 BERHASIL DIAKTIFKAN! 🦍]")
 
 if not BOTLOG_CHATID:
     LOGS.info(
