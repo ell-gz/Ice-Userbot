@@ -50,9 +50,9 @@ async def gben(userbot):
     if sender.id != me.id:
         dark = await dc.reply("`Gbanning...`")
     else:
-        dark = await dc.edit("`Memproses Global Banned Jamet..`")
+        dark = await dc.edit("`Memproses Giben Jamet..`")
     me = await userbot.client.get_me()
-    await dark.edit("`Global Banned Akan Segera Aktif..`")
+    await dark.edit("`Gban Akan Segera Aktif..`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     await userbot.get_chat()
     a = b = 0
@@ -67,10 +67,10 @@ async def gben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit("**Gagal Global Banned :(**")
+        return await dark.edit("**Gagal Gban :(**")
     if user:
         if user.id in DEVS:
-            return await dark.edit("**Gagal Global Banned, Dia Adalah Pembuat Saya 🤪**")
+            return await dark.edit("**Gagal Gban, Dia Adalah Pembuat Saya 🗿**")
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
         except BaseException:
@@ -89,12 +89,12 @@ async def gben(userbot):
                     f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
                     f"**User ID:** `{user.id}`\n"
                     f"**Action:** `Global Banned`\n"
-                    f"**Powered by:** `❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ`"
+                    f"**Powered by:** `🦍 Usᴇʀʙᴏᴛ`"
                 ) 
             except BaseException:
                 b += 1
     else:
-        await dark.edit("**Balas Ke Pesan Penggunanya Goblok**")
+        await dark.edit("**Balas Ke Pesan Penggunanya Blok**")
     try:
         if gmute(user.id) is False:
             return await dark.edit(
@@ -108,7 +108,7 @@ async def gben(userbot):
         f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**User ID:** `{user.id}`\n"
         f"**Action:** `Global Banned by {owner}`\n"
-        f"**Powered by:** `❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ`"
+        f"**Powered by:** `🦍 Usᴇʀʙᴏᴛ`"
     )
 
 
@@ -123,7 +123,7 @@ async def gunben(userbot):
     else:
         dark = await dc.edit("`Ungbanning....`")
     me = await userbot.client.get_me()
-    await dark.edit("`Membatalkan Perintah Global Banned`")
+    await dark.edit("`Membatalkan Perintah Gban`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     await userbot.get_chat()
     a = b = 0
@@ -161,7 +161,7 @@ async def gunben(userbot):
             except BaseException:
                 b += 1
     else:
-        await dark.edit("`Balas Ke Pesan Penggunanya Goblok`")
+        await dark.edit("`Balas Ke Pesan Penggunanya Blok`")
     try:
         if ungmute(user.id) is False:
             return await dark.edit("**Error! Pengguna Sedang Tidak Di Global Banned.**")
@@ -172,5 +172,5 @@ async def gunben(userbot):
         f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**User ID:** `{user.id}`\n"
         f"**Action:** `UnGBanned by {owner}`"
-        f"**Powered by:** `❄️ Iᴄᴇ-Usᴇʀʙᴏᴛ`"
+        f"**Powered by:** `🦍 Usᴇʀʙᴏᴛ`"
     )
