@@ -9,10 +9,10 @@ async def usit(event):
     await edit_or_reply(
         event,
         f"**Hai {owner} Kalo Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        f"✮ **Group :** [ᗰᑌᔑᏆᏦᏦᑌ ᔑᑌᑭᑭᝪᖇᎢ​](t.me/musikkugroup)\n"
-        f"✮ **Channel :** [𝙋𝙧𝙤𝙟𝙚𝙘𝙩 𝙅𝙖𝙬𝙖](t.me/musikkuchannel)\n"
-        f"✮ **Owner Repo :** [Kᴇɴ Kᴀɴ](t.me/escape_aja)\n"
-        f"✮ **Repo :** [Iᴄᴇ-Usᴇʀʙᴏᴛ](https://github.com/jokokendi/Ice-Userbot)\n",
+        f"✮ **Group :** [Diskusi Rasa​](t.me/tegediskusirasa)\n"
+        f"✮ **Channel :** [Random Channel](t.me/grzmusik)\n"
+        f"✮ **Owner Repo :** [Mas Gz](t.me/teleidgz)\n"
+        f"✮ **Repo :** [Usᴇʀʙᴏᴛ](https://t.me/teleidgz)\n",
     )
 
 
@@ -20,7 +20,7 @@ async def usit(event):
 async def var(event):
     await edit_or_reply(
         event,
-        "**Daftar Lengkap Vars Dari Ice-Userbot:** [KLIK DISINI](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)",
+        "**Daftar Lengkap Vars Dari Gz-Ubot:** [KLIK DISINI](https://telegra.ph/List-Variabel-Heroku-untuk-Man-Userbot-09-22)",
     )
 
 
@@ -28,13 +28,13 @@ CMD_HELP.update(
     {
         "helper": f"**Plugin : **`helper`\
         \n\n  •  **Syntax :** `{cmd}ihelp`\
-        \n  •  **Function : **Bantuan Untuk Ice-Userbot.\
+        \n  •  **Function : **Bantuan Untuk Gz-Ubot.\
         \n\n  •  **Syntax :** `{cmd}listvar`\
         \n  •  **Function : **Melihat Daftar Vars.\
         \n\n  •  **Syntax :** `{cmd}repo`\
-        \n  •  **Function : **Melihat Repository Ice-Userbot.\
+        \n  •  **Function : **Melihat Repository Gz-Ubot.\
         \n\n  •  **Syntax :** `{cmd}string`\
-        \n  •  **Function : **Link untuk mengambil String Ice-Userbot.\
+        \n  •  **Function : **Link untuk mengambil String Gz-Ubot.\
     "
     }
 )
